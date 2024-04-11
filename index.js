@@ -61,7 +61,7 @@ module.exports = function markdownLinkCheck(markdown, opts, callback) {
         }, markdown);
     }
 
-    const links = markdownLinkExtractor(markdown);
+    const links = markdownLinkExtractor(markdown, checkAnchors = true);
     const linksCollection = _.uniq(links);
     const bar = (opts.showProgressBar) ?
         new ProgressBar('Checking... [:bar] :percent', {
